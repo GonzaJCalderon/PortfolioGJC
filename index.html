@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <!--MENU ENCABEZADO-->
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="#">Gonzalo</a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
+                    <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
+                    <li><a href="#skills" onclick="seleccionar()" >SKILLS</a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li>
+                    <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+
+    <!--SECCION INICIO-->
+    <section id="inicio" class="inicio">
+        <div class="contenido-banner">
+            <div class="contenedor-img">
+                <img src="img/hero.png" alt="">
+            </div>
+            <h1>GONZALO CALDERON</h1>
+            <h2>Developer Full Stack</h2>
+            <div class="redes">
+                <a href="https://www.instagram.com/gonzakata/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com/gonzakata"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/gonzalojcalderon/"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/GonzaJCalderon"><i class="fa-brands fa-github"></i></a>
+                <a href="https:/wa.me/5492634618172"><i class="fa-brands fa-whatsapp"></i> </a>
+            </div>
+        </div>
+    </section>
+    
+    <!--SECCION SOBRE MI-->
+    <section id="sobremi" class="sobremi">
+        <div class="contenido-seccion">
+            <h2>Sobre Mí</h2>
+            <p><span>¡Hola! soy Gonzalo Calderón </span>me dedico principalmente al desarrollo web como Fullstack developer especializado en Front end. Tengo experiencia como Community Manager y en trabajos administrativos, pero mi verdadera pasión y enfoque se encuentran en el ámbito del desarrollo.
+                Me siento cómodo trabajando con tecnologías como React, Redux, y Node.js . He adquirido conocimientos a través de mi formación en Henry y también he realizado cursos en Coderhouse para complementar mis habilidades.
+                Soy versátil y capaz de desempeñarme tanto en roles Fullstack como en Frontend o Backend, aunque mi mayor destreza se encuentra en el Frontend. Me apasiona esta área y soy perfeccionista en busca de la excelencia.
+                En este momento, estoy buscando oportunidades laborales en el sector de tecnología de la información que me permitan aprovechar al máximo mi potencial y me brinden la posibilidad de crecer tanto profesional como personalmente. </p>
+                
+                <div class="fila">
+                    <!--datos personales-->
+                    <div class="col">
+                        <h3>Datos Personales</h3>
+                        <ul>
+                            <li>
+                                <strong>Cumpleaños</strong>
+                                13-07-1988
+                            </li>
+
+                            <li>
+                                <strong>Teléfono</strong>
+                                +54 9 2634618172
+                            </li>
+                            <li>
+                                <strong>Email</strong>
+                                gonzacalderon13788@gmail.com
+                            </li>
+                    
+                            <li>
+                                <strong>Dirección</strong>
+                                Godoy Cruz, Mendoza, Argentina
+                            </li>
+                            <li>
+                                <strong>Cargo</strong>
+                                <span>FREELANCE</span>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <!--intereses-->
+                    <div class="col">
+                        <h3>Intereses</h3>
+                        <div class="contenedor-intereses">
+                            <div class="interes">
+                                <i class="fa-solid fa-gamepad"></i>
+                                <span>JUEGOS</span>
+                            </div>
+                            <div class="interes">
+                                <i class="fa-solid fa-headphones"></i>
+                                <span>MUSICA</span>
+                            </div>
+                            <div class="interes">
+                                <i class="fa-solid fa-plane"></i>
+                                <span>VIAJAR</span>
+                            </div>
+                            <div class="interes">
+                                <i class="fa-brands fa-apple"></i>
+                                <span>MAC OS</span>
+                            </div>
+                           
+                            <div class="interes">
+                                <i class="fa-solid fa-futbol"></i>
+                                <span>DEPORTE</span>
+                            </div>
+                            <div class="interes">
+                                <i class="fa-solid fa-book"></i>
+                                <span>LIBROS</span>
+                            </div>
+                           
+                            <div class="interes">
+                                <i class="fa-solid fa-camera"></i>
+                                <span>FOTOS</span>
+                            </div>
+                             
+                            <div class="interes">
+                                <i class="fa-brands fa-twitch"></i>
+                                <span>STREAMING</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+               <a download="CV Gonzalo Calderon " href="archivo.pdf">
+                    Descargar CV <i class="fa-solid fa-download"></i>
+                    <span class="overlay"></span>
+            </a>
+        </div>
+    </section>
+
+      <!--SECCION SKILLS-->
+      <section class="skills" id="skills">
+        <div class="contenido-seccion">
+            <h2>Skills</h2>
+            <div class="fila">
+                  <!--Technical Skill-->
+                  <div class="col">
+                    <h3>Technical Skills</h3>
+                    <div class="skill">
+                        <span>Javascript</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>75%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>HTML & CSS</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>89%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>REACT</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>75%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>PostgreSQL</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>81%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Express</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>70%</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <!--Professional Skills-->
+                  <div class="col">
+                    <h3>Professional Skills</h3>
+                    <div class="skill">
+                        <span>Comunicacion</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>90%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Trabajo en Equipo</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>80%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Creatividad</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>99%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Dedicación</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>75%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Proyect Management</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>94%</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+      </section>
+
+      <!--SECCION CURRICULUM-->
+      <section id="curriculum" class="curriculum">
+        <div class="contenido-seccion">
+            <h2>Curriculum</h2>
+            <div class="fila">
+               <div class="col izquierda">
+                <h3>Educación</h3>
+                <div class="item izq">
+                    <h4>Developer Fullstack</h4>
+                    <span class="casa">Soy Henry</span>
+                    <span class="fecha">2023</span>
+                    <p>Durante mi etapa de estudio en Henry como Desarrollador Full Stack, adquirí conocimientos y habilidades sólidas que me permitieron sumergirme de manera integral en el mundo del desarrollo de aplicaciones web. Aprendí a diseñar y construir aplicaciones robustas utilizando tecnologías como JavaScript, HTML, CSS, React y Node.js. Además, trabajé en proyectos colaborativos y adquirí experiencia en la implementación de metodologías ágiles, lo que me permitió desarrollar habilidades de trabajo en equipo, comunicación efectiva y gestión eficiente del tiempo. Estoy emocionado de llevar mi pasión por la programación y mi sólida formación en desarrollo web al próximo desafío profesional.</p>
+                <div class="conectori">
+                    <div class="circuloi"></div>
+                </div>
+                </div>
+                <div class="item izq">
+                    <h4>Desarrollo Web</h4>
+                    <span class="casa">Coderhouse</span>
+                    <span class="fecha">2022</span>
+                    <p>Durante mi etapa de desarrollo web en Cordehouse, me enfoqué en perfeccionar mis habilidades en HTML y CSS. Trabajé en la creación de sitios web visualmente atractivos y funcionales, utilizando HTML para estructurar el contenido y CSS para dar estilo y diseño a las páginas. Aprendí a implementar diseños responsivos y adaptativos, asegurándome de que los sitios web fueran accesibles en diferentes dispositivos y pantallas. Además, me familiaricé con las mejores prácticas de codificación, optimización de rendimiento y compatibilidad entre navegadores. Mi tiempo en Cordehouse me permitió desarrollar una base sólida en HTML y CSS, y estoy emocionado de seguir ampliando mis conocimientos en estas tecnologías clave en mi carrera como desarrollador web.</p>
+                <div class="conectori">
+                    <div class="circuloi"></div>
+                </div>
+                </div>
+                <div class="item izq">
+                    <h4>Lic. Trabajo Social</h4>
+                    <span class="casa">Universidad Nacional de Cuyo</span>
+                    <span class="fecha">2007-2014</span>
+                    <p>Realicé estudios en la Licenciatura en Trabajo Social, aunque aún no he finalizado mi formación académica en esta área. Durante mi tiempo en el programa, adquirí un amplio conocimiento teórico y práctico sobre los fundamentos y principios del trabajo social. Aunque no he completado mi licenciatura, valoro enormemente las habilidades y la perspectiva que he obtenido hasta el momento, lo cual me ha permitido comprender mejor las problemáticas sociales y desarrollar un enfoque empático y comprometido hacia el bienestar de las personas</p>
+                <div class="conectori">
+                    <div class="circuloi"></div>
+                </div>
+                </div>
+               </div>
+
+               <div class="col derecha">
+                <h3>Experiencia de trabajo</h3>
+                <div class="item der">
+                    <h4>Community Manager</h4>
+                    <span class="casa">Secretaria de Cultura - Gobierno de Mendoza</span>
+                    <span class="fecha">2016-2020</span>
+                    <p>Como Community Manager y Secretario del Ministro de Cultura de Mendoza desde 2016 hasta 2020, desempeñé un papel fundamental en la gestión de las redes sociales, tareas administrativas y la producción de eventos. 
+            
+                        </p>
+                <div class="conectord">
+                    <div class="circulod"></div>
+                </div>
+                </div>
+                <div class="item der">
+                    <h4>Secretario Privado y encargado de comunicacion</h4>
+                    <span class="casa">Direccion de Cultura en Industrias Creativas - Municipalidad de Godoy Cruz</span>
+                    <span class="fecha">2020-2022</span>
+                    <p>Como Secretario Privado y encargado de comunicación, he tenido el privilegio de desempeñar un papel crucial en la gestión de la comunicación interna y externa de la organización. Mi trabajo ha implicado la coordinación y organización de reuniones, redacción de documentos oficiales, así como la gestión de la correspondencia y la agenda del equipo directivo. Además, he sido responsable de mantener una comunicación fluida y efectiva con los diferentes stakeholders, tanto a nivel interno como externo, asegurándome de transmitir los mensajes de manera clara y coherente. Mi experiencia en esta posición me ha permitido desarrollar habilidades de organización, comunicación y gestión del tiempo, además de mantener la confidencialidad y la discreción en todo momento. Estoy orgulloso de haber desempeñado un papel clave en la eficiencia y el éxito de la organización a través de mi trabajo como Secretario Privado y encargado de comunicación.</p>
+                <div class="conectord">
+                    <div class="circulod"></div>
+                </div>
+                </div>
+                <div class="item der">
+                    <h4>Miembro del equipo de Relaciones Estudiantiles</h4>
+                    <span class="casa">Facultad de Ciencias Politicas y Sociales - UNCuyo</span>
+                    <span class="fecha">2014-2016</span>
+                    <p>Como miembro del equipo de Relaciones Estudiantiles en la Facultad de Ciencias Políticas y Sociales de la UNCuyo, he tenido la oportunidad de trabajar en estrecha colaboración con estudiantes, docentes y personal administrativo. Mi rol ha implicado la organización y coordinación de eventos y actividades destinadas a promover la participación estudiantil y fortalecer el sentido de comunidad dentro de la facultad. Además, he brindado apoyo en la resolución de consultas y problemas relacionados con los estudiantes, facilitando así un ambiente académico y social favorable. A través de esta experiencia, he desarrollado habilidades en comunicación, trabajo en equipo y resolución de conflictos, y he adquirido un profundo conocimiento de las necesidades y preocupaciones de los estudiantes. Estoy orgulloso de haber contribuido al bienestar estudiantil y al enriquecimiento de la vida universitaria en la Facultad de Ciencias Políticas y Sociales de la UNCuyo.</p>
+                <div class="conectord">
+                    <div class="circulod"></div>
+                </div>
+                </div>
+                </div>
+               </div>
+            </div>
+        </div>
+      </section>
+
+      <!--SECCION PORTFOLIO-->
+      <section id="portfolio" class="portfolio">
+        <div class="contenido-seccion">
+            <h2>PORTFOLIO</h2>
+            <div class="galeria">
+                <div class="proyecto">   
+                    <a href="https://front-serendipia.vercel.app/">
+                    <img src="img/p1.jpg" alt="">
+                
+                    <div class="overlay">
+                        <h3>Serendipia</h3>
+                        <p>E commerce</p>
+                    </a>
+                    </div>
+                </div>
+
+                <div class="proyecto">
+                    <a href="https://countries-delta-five.vercel.app/">
+                    <img src="img/p2.jpg" alt="">
+                    <div class="overlay">
+                        <h3>Countries</h3>
+                        <p>Aplicacion</p>
+                    </a>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <img src="img/p3.jpg" alt="">
+                    <div class="overlay">
+                        <h3>Proximamente</h3>
+                        <p>...</p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <img src="img/p4.jpg" alt="">
+                    <div class="overlay">
+                        <h3>Proximamente</h3>
+                        <p>...</p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <a href ="https://pica-agencia-gonzalo-calderon.netlify.app/index.html">
+                    <img src="img/p5.jpg" alt="">
+                    <div class="overlay">
+                        <h3>Pica</h3>
+                        <p>Pagina de diseño</p>
+                    </a>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <img src="img/p6.jpg" alt="">
+                    <div class="overlay">
+                        <h3>Proximamente</h3>
+                        <p>...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+      <!--SECCION CONTACTO-->
+      <section id="contacto" class="contacto">
+        <div class="contenido-seccion">
+            <h2>CONTACTO</h2>
+            <div class="fila">
+                <!--Formulario-->
+                <div class="col">
+                    <form action="https://formsubmit.co/gonzacalderon13788@gmail.com" method="POST"/>
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" name="Tú Nombre">
+
+                    <label for="email">Correo Electronico</label>
+                    <input type="email" name="email">
+                    
+                    <label for="subject">Asunto</label>
+                    <input type="text" name="subject">
+
+                    <label for="comments">Comentarios</label>
+                    <textarea name="comments" cols="30" rows="10"></textarea>
+
+                    <button>
+                        Enviar Mensaje<i class="fa-solid fa-paper-plane"></i>
+                        <span class="overlay"></span>
+                    </button>
+
+                    <input type="hidden" name="_next" value=""
+                </form>
+                </div>
+                    <!--Mapa-->
+                    <div class="col">
+                        <img src="img/ubicacion.png" alt="">
+                        <div class="info">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Godoy Cruz, Mza
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                    Telefono +54-2634618172
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    Email: gonzacalderon13788@gmail.com
+                                </li>
+                            </ul>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!--footer-->
+      <footer>
+        <a href="#inicio" class="arriba">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+        <div class="redes">
+            <a href="https://www.instagram.com/gonzakata/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com/gonzakata"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/gonzalojcalderon/"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/GonzaJCalderon"><i class="fa-brands fa-github"></i></a>
+            <a href="https:/wa.me/5492634618172"><i class="fa-brands fa-whatsapp"></i> </a>
+        </div>
+      </footer>
+
+<script src="script.js" ></script>
+</body>
+</html>
