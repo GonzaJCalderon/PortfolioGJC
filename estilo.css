@@ -714,4 +714,9 @@ footer .arriba{
     .contacto .fila .col{
         width: 100%;
     }
+
+    .portfolio .galeria .proyecto a {
+        text-decoration: none;
+    }
+    
 }
