@@ -15,23 +15,23 @@
     --dark-elevated: hsl(220, 15%, 20%);
     --text-primary: hsl(0, 0%, 98%);
     --text-secondary: hsl(0, 0%, 75%);
-    
+
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     --gradient-secondary: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
     --gradient-dark: linear-gradient(135deg, var(--dark) 0%, var(--dark-surface) 100%);
     --gradient-accent: linear-gradient(135deg, var(--accent) 0%, hsl(35, 95%, 45%) 100%);
-    
+
     /* Shadows */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
     --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
     --shadow-glow: 0 0 20px rgba(28, 182, 152, 0.3);
-    
+
     /* Typography */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-display: 'Space Grotesk', var(--font-primary);
-    
+
     /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -39,14 +39,14 @@
     --spacing-lg: 2rem;
     --spacing-xl: 3rem;
     --spacing-2xl: 4rem;
-    
+
     /* Border Radius */
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-xl: 24px;
     --radius-full: 9999px;
-    
+
     /* Transitions */
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -178,7 +178,7 @@ body {
 /* ===== HERO SECTION ===== */
 .inicio {
     background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 35, 38, 0.95) 100%),
-                url(img/fondo.jpg);
+        url(img/fondo.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -203,8 +203,15 @@ body {
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.6; }
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
 }
 
 .inicio .contenido-banner {
@@ -228,6 +235,7 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -516,7 +524,7 @@ section h2::after {
     margin-bottom: var(--spacing-xl);
 }
 
-.skills .skill > span {
+.skills .skill>span {
     font-weight: 600;
     font-size: 1.125rem;
     display: block;
@@ -566,90 +574,195 @@ section h2::after {
     width: 0%;
     animation: 2s javascript forwards;
 }
+
 @keyframes javascript {
-    0% { width: 0%; }
-    100% { width: 75%; }
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 75%;
+    }
 }
 
 .skills .skill .htmlcss {
     width: 0%;
     animation: 2s htmlcss forwards;
 }
+
 @keyframes htmlcss {
-    0% { width: 0%; }
-    100% { width: 89%; }
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 89%;
+    }
 }
 
 .skills .skill .photoshop {
     width: 0%;
     animation: 2s photoshop forwards;
 }
+
 @keyframes photoshop {
-    0% { width: 0%; }
-    100% { width: 75%; }
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 75%;
+    }
 }
 
 .skills .skill .wordpress {
     width: 0%;
     animation: 2s wordpress forwards;
 }
+
 @keyframes wordpress {
-    0% { width: 0%; }
-    100% { width: 81%; }
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 81%;
+    }
 }
 
 .skills .skill .drupal {
     width: 0%;
     animation: 2s drupal forwards;
 }
+
 @keyframes drupal {
-    0% { width: 0%; }
-    100% { width: 70%; }
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+.skills .skill .nodejs {
+    width: 0%;
+    animation: 2s nodejs forwards;
+}
+
+@keyframes nodejs {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 78%;
+    }
+}
+
+.skills .skill .nextjs {
+    width: 0%;
+    animation: 2s nextjs forwards;
+}
+
+@keyframes nextjs {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 72%;
+    }
+}
+
+.skills .skill .nestjs {
+    width: 0%;
+    animation: 2s nestjs forwards;
+}
+
+@keyframes nestjs {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 65%;
+    }
 }
 
 .skills .skill .comunicacion {
     width: 0%;
     animation: 2s comunicacion forwards;
 }
+
 @keyframes comunicacion {
-    0% { width: 0%; }
-    100% { width: 90%; }
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 90%;
+    }
 }
 
 .skills .skill .trabajo {
     width: 0%;
     animation: 2s trabajo forwards;
 }
+
 @keyframes trabajo {
-    0% { width: 0%; }
-    100% { width: 80%; }
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 80%;
+    }
 }
 
 .skills .skill .creatividad {
     width: 0%;
     animation: 2s creatividad forwards;
 }
+
 @keyframes creatividad {
-    0% { width: 0%; }
-    100% { width: 99%; }
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 99%;
+    }
 }
 
 .skills .skill .dedicacion {
     width: 0%;
     animation: 2s dedicacion forwards;
 }
+
 @keyframes dedicacion {
-    0% { width: 0%; }
-    100% { width: 75%; }
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 75%;
+    }
 }
 
 .skills .skill .proyect {
     width: 0%;
     animation: 2s proyect forwards;
 }
+
 @keyframes proyect {
-    0% { width: 0%; }
-    100% { width: 94%; }
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 94%;
+    }
 }
 
 /* ===== CURRICULUM SECTION ===== */
@@ -741,6 +854,11 @@ section h2::after {
     aspect-ratio: 16 / 10;
 }
 
+.portfolio .galeria .proyecto a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .portfolio .galeria .proyecto:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: var(--shadow-lg);
@@ -804,8 +922,8 @@ section h2::after {
 
 /* ===== CONTACTO SECTION ===== */
 .contacto {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(30, 35, 38, 0.9)), 
-                      url(img/contact_bg.png);
+    background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(30, 35, 38, 0.9)),
+        url(img/contact_bg.png);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1008,11 +1126,11 @@ footer .arriba:hover {
     nav {
         display: none;
     }
-    
+
     .nav-responsive {
         display: block;
     }
-    
+
     nav.responsive {
         display: block;
         position: absolute;
@@ -1026,20 +1144,20 @@ footer .arriba:hover {
         box-shadow: var(--shadow-lg);
         padding: var(--spacing-sm);
     }
-    
+
     nav.responsive ul {
         display: block !important;
     }
-    
+
     nav.responsive ul li {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         padding: var(--spacing-sm) 0;
     }
-    
+
     nav.responsive ul li:last-child {
         border-bottom: none;
     }
-    
+
     nav.responsive ul li a {
         display: block;
     }
@@ -1049,26 +1167,26 @@ footer .arriba:hover {
     :root {
         font-size: 14px;
     }
-    
+
     section h2 {
         font-size: 2.5rem;
     }
-    
+
     .inicio .contenido-banner h1 {
         font-size: 2rem;
     }
-    
+
     .sobremi .fila,
     .skills .fila,
     .curriculum .fila,
     .contacto .fila {
         grid-template-columns: 1fr;
     }
-    
+
     .portfolio .galeria {
         grid-template-columns: 1fr;
     }
-    
+
     .contacto .col .info {
         position: static;
         transform: none;
@@ -1080,11 +1198,11 @@ footer .arriba:hover {
     .contenedor-header header {
         padding: var(--spacing-sm) var(--spacing-md);
     }
-    
+
     section {
         padding: var(--spacing-xl) var(--spacing-md);
     }
-    
+
     .inicio .contenido-banner {
         padding: var(--spacing-xl) var(--spacing-lg);
     }
@@ -1100,12 +1218,11 @@ footer .arriba:hover {
 }
 
 /* ===== UTILITY CLASSES ===== */
-.overlay {
-    /* Used for button/link overlays */
-}
+/* Overlay class used for button/link overlay effects throughout the design */
 
 /* ===== PRINT STYLES ===== */
 @media print {
+
     .contenedor-header,
     .nav-responsive,
     footer .arriba,

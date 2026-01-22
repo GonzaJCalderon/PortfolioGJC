@@ -72,19 +72,25 @@ function efectoHabilidades() {
     if (distancia_skills >= 300) {
         const habilidades = document.getElementsByClassName("progreso");
         if (habilidades.length > 0 && !habilidades[0].classList.contains('animated')) {
-            // Technical Skills
-            habilidades[0]?.classList.add("javascript");
-            habilidades[1]?.classList.add("htmlcss");
-            habilidades[2]?.classList.add("photoshop");
-            habilidades[3]?.classList.add("wordpress");
-            habilidades[4]?.classList.add("drupal");
+            // Frontend Skills
+            habilidades[0]?.classList.add("javascript");    // Javascript
+            habilidades[1]?.classList.add("htmlcss");       // HTML & CSS
+            habilidades[2]?.classList.add("photoshop");     // REACT
+            habilidades[3]?.classList.add("nextjs");        // Next.js
+            habilidades[4]?.classList.add("wordpress");     // WordPress
+            
+            // Backend Skills
+            habilidades[5]?.classList.add("nodejs");        // Node.js
+            habilidades[6]?.classList.add("nestjs");        // NestJS
+            habilidades[7]?.classList.add("drupal");        // Express
+            habilidades[8]?.classList.add("wordpress");     // PostgreSQL
             
             // Professional Skills
-            habilidades[5]?.classList.add("comunicacion");
-            habilidades[6]?.classList.add("trabajo");
-            habilidades[7]?.classList.add("creatividad");
-            habilidades[8]?.classList.add("dedicacion");
-            habilidades[9]?.classList.add("proyect");
+            habilidades[9]?.classList.add("comunicacion");
+            habilidades[10]?.classList.add("trabajo");
+            habilidades[11]?.classList.add("creatividad");
+            habilidades[12]?.classList.add("dedicacion");
+            habilidades[13]?.classList.add("proyect");
             
             // Mark as animated to prevent re-triggering
             habilidades[0]?.classList.add('animated');
