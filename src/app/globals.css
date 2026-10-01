@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand:    #c6b5a3;
+  --color-bgDark:   #0e0d0c;
+  --color-bgLight:  #161412;
+  --color-textMain: #f4f4f0;
+  --color-textMuted:#888880;
+  --font-sans: var(--font-inter);
+  --font-anton: var(--font-anton);
+}
+
+:root {
+  --background: #0e0d0c;
+  --foreground: #f4f4f0;
+}
+
+/* ─── Reset / Base ─────────────────────────────── */
+html { scroll-behavior: auto; } /* Lenis controla el scroll suave */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+/* ─── Cursor personalizado ─────────────────────── */
+*, *::before, *::after { cursor: none !important; box-sizing: border-box; }
+
+#cur {
+  position: fixed;
+  top: 0; left: 0;
+  width: 10px; height: 10px;
+  background: #c6b5a3;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  mix-blend-mode: difference;
+  transition: width .15s, height .15s;
+}
+#cur.big { width: 56px; height: 56px; opacity: .5; }
+
+#cur-f {
+  position: fixed;
+  top: 0; left: 0;
+  width: 36px; height: 36px;
+  border: 1.5px solid rgba(198,181,163,.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+/* ─── Overlay de carga ─────────────────────────── */
+#page-overlay {
+  position: fixed;
+  inset: 0;
+  background: #0e0d0c;
+  z-index: 9990;
+  transform-origin: top;
+  pointer-events: none;
+}
+
+/* ─── Marquee (texto deslizante continuo) ────────── */
+.marquee-track {
+  display: inline-block;
+  animation: marquee-run 14s linear infinite;
+}
+
+@keyframes marquee-run {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ─── Scroll indicator (línea animada) ──────────── */
+@keyframes scroll-ind {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  30%  { opacity: 1; }
+  100% { transform: translateY(200%); opacity: 0; }
+}
+.animate-scroll-indicator {
+  animation: scroll-ind 2s ease-in-out infinite;
+}
+
+/* ─── Badge circular giratoria ──────────────────── */
+@keyframes spin-s {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spin-s 14s linear infinite; }
+
+/* ─── Líneas de reveal (overflow:hidden wrapper) ── */
+.reveal-wrap { overflow: hidden; }
+
+/* ─── Progress bar ─────────────────────────────── */
+#progress-bar { transition: width .08s linear; }
+
+/* ─── Will-change hints ─────────────────────────── */
+.will-change-transform { will-change: transform; }
+.will-change-opacity   { will-change: opacity; }
