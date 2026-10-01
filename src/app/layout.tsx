@@ -29,6 +29,20 @@ export const metadata: Metadata = {
       "Portfolio profesional de Gonzalo Calderón — React, Next.js, NestJS",
     url: "https://gjcalderonportfolio.netlify.app/",
     type: "website",
+    images: [
+      {
+        url: "https://gjcalderonportfolio.netlify.app/og-image.png",
+        width: 1024,
+        height: 1024,
+        alt: "Gonzalo Calderón Portfolio - 3D Avatar in Space",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gonzalo Calderón | Desarrollador Full Stack",
+    description: "Portfolio profesional de Gonzalo Calderón — React, Next.js, NestJS",
+    images: ["https://gjcalderonportfolio.netlify.app/og-image.png"],
   },
 };
 
