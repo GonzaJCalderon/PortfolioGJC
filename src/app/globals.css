@@ -104,9 +104,9 @@ body {
 
 /* ─── Máscara del avatar ──────────── */
 .md-avatar-mask {
-  /* En móviles: globo mucho más amplio para que se vea el espacio pero difumine los bordes cuadrados */
-  mask-image: radial-gradient(circle at center, black 65%, transparent 100%);
-  -webkit-mask-image: radial-gradient(circle at center, black 65%, transparent 100%);
+  /* En móviles: usamos closest-side para garantizar que el difuminado termine exactamente antes de tocar el borde recto del contenedor */
+  mask-image: radial-gradient(circle closest-side, black 50%, transparent 95%);
+  -webkit-mask-image: radial-gradient(circle closest-side, black 50%, transparent 95%);
 }
 
 @media (min-width: 768px) {
