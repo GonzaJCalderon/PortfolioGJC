@@ -68,7 +68,7 @@ export default function About3D() {
           loop 
           muted 
           playsInline
-          className="w-[90%] max-w-[600px] aspect-square object-cover"
+          className="w-[90%] max-w-[600px] aspect-square object-cover opacity-30 md:opacity-100"
           style={{ 
             maskImage: 'radial-gradient(circle at center, black 45%, transparent 75%)', 
             WebkitMaskImage: 'radial-gradient(circle at center, black 45%, transparent 75%)' 
@@ -83,13 +83,13 @@ export default function About3D() {
 
           {/* TÍTULO EN FUENTE CONDENSADA TIPO "ANTON" */}
           <div className="mb-12 flex flex-col items-start">
-            <div className="rv-wrap overflow-hidden relative pt-4">
-              <h2 className="rv font-anton uppercase text-[5rem] md:text-[8rem] lg:text-[10rem] leading-[0.85] tracking-normal text-textMain translate-y-full will-change-transform transform scale-y-[1.1] origin-bottom">
+            <div className="rv-wrap overflow-hidden relative pt-4 pb-4">
+              <h2 className="rv font-anton uppercase text-[5rem] md:text-[8rem] lg:text-[10rem] leading-[0.9] tracking-normal text-textMain translate-y-full will-change-transform transform scale-y-[1.1] origin-bottom">
                 FRONTEND
               </h2>
             </div>
-            <div className="rv-wrap overflow-hidden relative pb-2 mt-0 md:-mt-2">
-              <h2 className="rv font-anton uppercase text-[5rem] md:text-[8rem] lg:text-[10rem] leading-[0.85] tracking-normal text-textMain translate-y-full will-change-transform transform scale-y-[1.1] origin-bottom">
+            <div className="rv-wrap overflow-hidden relative pb-4 -mt-4 md:-mt-6">
+              <h2 className="rv font-anton uppercase text-[5rem] md:text-[8rem] lg:text-[10rem] leading-[0.9] tracking-normal text-textMain translate-y-full will-change-transform transform scale-y-[1.1] origin-bottom">
                 DEVELOPER
               </h2>
             </div>
