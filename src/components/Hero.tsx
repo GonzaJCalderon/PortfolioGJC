@@ -95,14 +95,14 @@ export default function Hero() {
 
         {/* Título hero — Línea 1 */}
         <div className="overflow-hidden">
-          <div ref={titleLine1} className="font-black uppercase leading-[0.86] tracking-tighter text-[clamp(4rem,12vw,13rem)] translate-y-full will-change-transform">
+          <div ref={titleLine1} className="font-black uppercase leading-[0.86] tracking-tighter text-[clamp(2.8rem,14vw,13rem)] translate-y-full will-change-transform">
             GONZALO
           </div>
         </div>
 
         {/* Título hero — Línea 2 */}
         <div className="overflow-hidden mb-8">
-          <div ref={titleLine2} className="font-black uppercase leading-[0.86] tracking-tighter text-[clamp(4rem,12vw,13rem)] text-brand translate-y-full will-change-transform">
+          <div ref={titleLine2} className="font-black uppercase leading-[0.86] tracking-tighter text-[clamp(2.8rem,14vw,13rem)] text-brand translate-y-full will-change-transform">
             CALDERÓN
           </div>
         </div>

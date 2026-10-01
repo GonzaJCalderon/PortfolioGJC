@@ -43,7 +43,7 @@ export default function About3D() {
   }, []);
 
   return (
-    <section id="intro" ref={secRef} className="relative w-full overflow-hidden py-32 px-8 md:px-14 min-h-screen flex items-center bg-black">
+    <section id="intro" ref={secRef} className="relative w-full overflow-hidden pt-32 pb-8 md:py-32 px-8 md:px-14 min-h-screen flex items-center bg-black">
       
       {/* ── FONDO DE LA SECCIÓN: AMBIENTE ESPACIAL (VIDEO 1) ── */}
       <div className="absolute inset-0 z-0 bg-[#020510] overflow-hidden">
@@ -116,14 +116,14 @@ export default function About3D() {
         </div>
 
         {/* ── VIDEO PRINCIPAL DEL MUÑECO (A LA DERECHA) ── */}
-        <div className="relative md:absolute md:right-[2%] md:top-1/2 md:transform md:-translate-y-1/2 w-full md:w-[50%] h-[50vh] md:h-[80vh] flex items-center justify-center pointer-events-none z-0 mt-8 md:mt-0">
+        <div className="relative md:absolute md:right-[2%] md:top-1/2 md:transform md:-translate-y-1/2 w-full md:w-[50%] h-auto md:h-[80vh] flex items-center justify-center pointer-events-none z-0 mt-4 md:mt-0">
           <video 
             src="/img/avatar.mp4" 
             autoPlay 
             loop 
             muted 
             playsInline
-            className="w-full max-w-[400px] md:max-w-[600px] aspect-square object-cover opacity-100"
+            className="w-full max-w-[350px] md:max-w-[600px] aspect-square object-cover opacity-100"
             style={{ 
               maskImage: 'radial-gradient(circle at center, black 45%, transparent 75%)', 
               WebkitMaskImage: 'radial-gradient(circle at center, black 45%, transparent 75%)' 

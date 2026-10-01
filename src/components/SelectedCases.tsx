@@ -69,7 +69,7 @@ export default function SelectedCases() {
   }, []);
 
   return (
-    <section id="cases" ref={secRef} className="w-full bg-bgLight py-32 px-8 md:px-14">
+    <section id="cases" ref={secRef} className="w-full bg-bgLight pt-16 pb-32 md:py-32 px-8 md:px-14">
       <div className="max-w-7xl mx-auto">
 
         <div className="title-group">
