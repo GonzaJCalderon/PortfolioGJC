@@ -65,12 +65,12 @@ export default function Footer() {
         {/* Título "Conectemos" */}
         <div className="mb-24">
           <div className="rv-wrap overflow-hidden">
-            <h2 className="rv font-black uppercase tracking-tighter text-[clamp(3.5rem,10vw,9rem)] leading-[0.88] translate-y-full will-change-transform">
+            <h2 className="rv font-black uppercase tracking-tighter text-[clamp(2.5rem,12vw,9rem)] leading-[0.88] translate-y-full will-change-transform">
               Conectemos
             </h2>
           </div>
           <div className="rv-wrap overflow-hidden">
-            <h2 className="rv font-black uppercase tracking-tighter text-[clamp(3.5rem,10vw,9rem)] leading-[0.88] text-brand translate-y-full will-change-transform">
+            <h2 className="rv font-black uppercase tracking-tighter text-[clamp(2.5rem,12vw,9rem)] leading-[0.88] text-brand translate-y-full will-change-transform">
               Ahora
             </h2>
           </div>

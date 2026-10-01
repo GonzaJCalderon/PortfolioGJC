@@ -60,26 +60,10 @@ export default function About3D() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80 md:hidden"></div>
       </div>
 
-      {/* ── VIDEO PRINCIPAL DEL MUÑECO (A LA DERECHA) ── */}
-      <div className="absolute right-0 md:right-[2%] top-1/2 transform -translate-y-1/2 w-full md:w-[50%] h-[80vh] flex items-center justify-center pointer-events-none z-0">
-        <video 
-          src="/img/avatar.mp4" 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="w-[90%] max-w-[600px] aspect-square object-cover opacity-30 md:opacity-100"
-          style={{ 
-            maskImage: 'radial-gradient(circle at center, black 45%, transparent 75%)', 
-            WebkitMaskImage: 'radial-gradient(circle at center, black 45%, transparent 75%)' 
-          }}
-        />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto w-full">
+      <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col md:block">
         
         {/* ── CONTENEDOR IZQUIERDO ESTILO PATRICK DAVID ── */}
-        <div className="flex flex-col w-full md:w-[65%]">
+        <div className="flex flex-col w-full md:w-[65%] relative z-10 pt-16 md:pt-0">
 
           {/* TÍTULO EN FUENTE CONDENSADA TIPO "ANTON" */}
           <div className="mb-12 flex flex-col items-start">
@@ -129,6 +113,22 @@ export default function About3D() {
             </div>
           </div>
 
+        </div>
+
+        {/* ── VIDEO PRINCIPAL DEL MUÑECO (A LA DERECHA) ── */}
+        <div className="relative md:absolute md:right-[2%] md:top-1/2 md:transform md:-translate-y-1/2 w-full md:w-[50%] h-[50vh] md:h-[80vh] flex items-center justify-center pointer-events-none z-0 mt-8 md:mt-0">
+          <video 
+            src="/img/avatar.mp4" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="w-full max-w-[400px] md:max-w-[600px] aspect-square object-cover opacity-100"
+            style={{ 
+              maskImage: 'radial-gradient(circle at center, black 45%, transparent 75%)', 
+              WebkitMaskImage: 'radial-gradient(circle at center, black 45%, transparent 75%)' 
+            }}
+          />
         </div>
 
       </div>
