@@ -102,9 +102,16 @@ body {
 .will-change-transform { will-change: transform; }
 .will-change-opacity   { will-change: opacity; }
 
-/* ─── Máscara del avatar (sólo desktop) ──────────── */
+/* ─── Máscara del avatar ──────────── */
+.md-avatar-mask {
+  /* En móviles: globo mucho más amplio para que se vea el espacio pero difumine los bordes cuadrados */
+  mask-image: radial-gradient(circle at center, black 65%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 65%, transparent 100%);
+}
+
 @media (min-width: 768px) {
   .md-avatar-mask {
+    /* En desktop: el globo original más cerrado */
     mask-image: radial-gradient(circle at center, black 45%, transparent 75%);
     -webkit-mask-image: radial-gradient(circle at center, black 45%, transparent 75%);
   }
