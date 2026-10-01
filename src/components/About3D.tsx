@@ -77,7 +77,7 @@ export default function About3D() {
                 DEVELOPER
               </h2>
             </div>
-            <div className="text-right w-full pr-4 md:pr-12 mt-4 md:mt-2">
+            <div className="text-left md:text-right w-full md:pr-12 mt-4 md:mt-2">
               <span className="text-brand text-xs md:text-sm font-bold tracking-widest uppercase">
                 Gonzalo Calderón
               </span>
