@@ -101,3 +101,11 @@ body {
 /* ─── Will-change hints ─────────────────────────── */
 .will-change-transform { will-change: transform; }
 .will-change-opacity   { will-change: opacity; }
+
+/* ─── Máscara del avatar (sólo desktop) ──────────── */
+@media (min-width: 768px) {
+  .md-avatar-mask {
+    mask-image: radial-gradient(circle at center, black 45%, transparent 75%);
+    -webkit-mask-image: radial-gradient(circle at center, black 45%, transparent 75%);
+  }
+}

@@ -123,11 +123,7 @@ export default function About3D() {
             loop 
             muted 
             playsInline
-            className="w-full max-w-[350px] md:max-w-[600px] aspect-square object-cover opacity-100"
-            style={{ 
-              maskImage: 'radial-gradient(circle at center, black 45%, transparent 75%)', 
-              WebkitMaskImage: 'radial-gradient(circle at center, black 45%, transparent 75%)' 
-            }}
+            className="w-full max-w-[350px] md:max-w-[600px] aspect-square object-cover opacity-100 md-avatar-mask"
           />
         </div>
 
