@@ -79,16 +79,12 @@ export default function About3D() {
             autoPlay loop muted playsInline
             className="hidden md:block w-full h-full object-cover object-right opacity-100"
           />
-          {/* VIDEO MOBILE (Vertical) achicado y pegado a la derecha/abajo */}
+          {/* VIDEO MOBILE (Vertical) */}
           <video 
             ref={mobileVideoRef}
             src="/img/avatar-mobile.mp4" 
             autoPlay loop muted playsInline
-            className="block md:hidden absolute right-[-5%] bottom-0 w-full h-full object-cover object-bottom opacity-100 scale-[0.75] origin-bottom-right"
-            style={{ 
-              WebkitMaskImage: 'radial-gradient(circle at 80% 80%, black 50%, transparent 90%)', 
-              maskImage: 'radial-gradient(circle at 80% 80%, black 50%, transparent 90%)' 
-            }}
+            className="block md:hidden w-full h-full object-cover object-right opacity-100"
           />
         </div>
         {/* Overlays: Solo oscurecemos la mitad izquierda donde va el texto, dejamos la derecha intacta */}
