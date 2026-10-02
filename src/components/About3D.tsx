@@ -10,24 +10,30 @@ const skills = ['React', 'Next.js', 'TypeScript', 'Node.js', 'NestJS', 'PostgreS
 export default function About3D() {
   const secRef = useRef<HTMLElement>(null);
   const floatRef = useRef<HTMLDivElement>(null);
-  const avatarVideoRef = useRef<HTMLVideoElement>(null);
+  const videoWrapperRef = useRef<HTMLDivElement>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    const vid = avatarVideoRef.current;
-    if (!vid) return;
-
-    // Reproducir más lento
-    vid.playbackRate = 0.5;
-
-    // Para evitar el salto brusco al final, reiniciamos el video un poco antes de que termine
-    const handleTimeUpdate = () => {
-      if (vid.duration > 0 && vid.currentTime >= vid.duration - 0.2) {
-        vid.currentTime = 0.1; // Reiniciamos al principio antes del último frame
-      }
+    const setupVideo = (vid: HTMLVideoElement | null) => {
+      if (!vid) return;
+      vid.playbackRate = 0.5;
+      const handleTimeUpdate = () => {
+        if (vid.duration > 0 && vid.currentTime >= vid.duration - 0.2) {
+          vid.currentTime = 0.1;
+        }
+      };
+      vid.addEventListener('timeupdate', handleTimeUpdate);
+      return () => vid.removeEventListener('timeupdate', handleTimeUpdate);
     };
 
-    vid.addEventListener('timeupdate', handleTimeUpdate);
-    return () => vid.removeEventListener('timeupdate', handleTimeUpdate);
+    const cleanupDesktop = setupVideo(desktopVideoRef.current);
+    const cleanupMobile = setupVideo(mobileVideoRef.current);
+
+    return () => {
+      if (cleanupDesktop) cleanupDesktop();
+      if (cleanupMobile) cleanupMobile();
+    };
   }, []);
 
   useEffect(() => {
@@ -65,15 +71,22 @@ export default function About3D() {
       
       {/* ── FONDO DE LA SECCIÓN: VIDEO PRE-COMPUESTO (AVATAR + ESPACIO) ── */}
       <div className="absolute inset-0 z-0 bg-[#020510] overflow-hidden">
-        <video 
-          ref={avatarVideoRef}
-          src="/img/avatar.mp4" 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="w-full h-full object-cover object-[90%_center] md:object-right opacity-100"
-        />
+        <div ref={videoWrapperRef} className="w-full h-full relative">
+          {/* VIDEO DESKTOP (Horizontal) */}
+          <video 
+            ref={desktopVideoRef}
+            src="/img/avatar.mp4" 
+            autoPlay loop muted playsInline
+            className="hidden md:block w-full h-full object-cover object-right opacity-100"
+          />
+          {/* VIDEO MOBILE (Vertical) */}
+          <video 
+            ref={mobileVideoRef}
+            src="/img/avatar-mobile.mp4" 
+            autoPlay loop muted playsInline
+            className="block md:hidden w-full h-full object-cover object-center opacity-100"
+          />
+        </div>
         {/* Overlays para oscurecer el fondo y asegurar legibilidad del texto */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80 md:hidden"></div>
