@@ -69,6 +69,17 @@ export default function About3D() {
   return (
     <section id="intro" ref={secRef} className="relative w-full overflow-hidden pt-32 pb-8 md:py-32 px-8 md:px-14 min-h-screen flex items-center bg-black">
       
+      {/* ANIMACIÓN FLOTANTE */}
+      <style>{`
+        @keyframes floatAvatar {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-20px); }
+        }
+        .float-animation {
+          animation: floatAvatar 6s ease-in-out infinite;
+        }
+      `}</style>
+
       {/* ── FONDO DE LA SECCIÓN: VIDEO PRE-COMPUESTO (AVATAR + ESPACIO) ── */}
       <div className="absolute inset-0 z-0 bg-[#020510] overflow-hidden">
         <div ref={videoWrapperRef} className="w-full h-full relative">
@@ -84,7 +95,11 @@ export default function About3D() {
             ref={mobileVideoRef}
             src="/img/avatar-mobile.mp4" 
             autoPlay loop muted playsInline
-            className="block md:hidden w-full h-full object-cover object-right opacity-100"
+            className="block md:hidden absolute right-[-10%] bottom-0 w-[120%] h-[105%] object-cover object-[100%_100%] opacity-100 float-animation origin-bottom"
+            style={{ 
+              WebkitMaskImage: 'radial-gradient(circle at 80% 80%, black 50%, transparent 90%)', 
+              maskImage: 'radial-gradient(circle at 80% 80%, black 50%, transparent 90%)' 
+            }}
           />
         </div>
         {/* Overlays: Solo oscurecemos la mitad izquierda donde va el texto, dejamos la derecha intacta */}
@@ -144,7 +159,7 @@ export default function About3D() {
 
           {/* ── TEXTO DE DESCRIPCIÓN ALINEADO A LA IZQUIERDA Y CONTROLADO ── */}
           <div className="flex justify-start w-full mt-6 md:mt-4">
-            <div className="w-[60%] md:w-[85%] pr-0">
+            <div className="w-[50%] md:w-[85%] pr-0">
               <div className="rv-wrap overflow-hidden mb-2 pt-2 pb-1">
                 <p className="rv text-lg md:text-2xl font-black uppercase translate-y-full will-change-transform text-left">
                   Uso mi pasión y habilidades
