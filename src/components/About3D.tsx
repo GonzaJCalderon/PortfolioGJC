@@ -84,12 +84,12 @@ export default function About3D() {
             ref={mobileVideoRef}
             src="/img/avatar-mobile.mp4" 
             autoPlay loop muted playsInline
-            className="block md:hidden w-full h-full object-cover object-center opacity-100"
+            className="block md:hidden w-full h-full object-cover object-right opacity-100 scale-[0.80] origin-right translate-x-[5%]"
           />
         </div>
         {/* Overlays para oscurecer el fondo y asegurar legibilidad del texto */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80 md:hidden"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-transparent to-black/90 md:hidden"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col md:block">
