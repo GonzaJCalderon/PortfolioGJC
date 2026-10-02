@@ -90,20 +90,9 @@ export default function About3D() {
             autoPlay loop muted playsInline
             className="hidden md:block w-full h-full object-cover object-right opacity-100"
           />
-          {/* VIDEO MOBILE (Vertical) */}
-          <video 
-            ref={mobileVideoRef}
-            src="/img/avatar-mobile.mp4" 
-            autoPlay loop muted playsInline
-            className="block md:hidden absolute right-[-10%] bottom-0 w-[120%] h-[105%] object-cover object-[100%_100%] opacity-100 float-animation origin-bottom"
-            style={{ 
-              WebkitMaskImage: 'radial-gradient(circle at 80% 80%, black 50%, transparent 90%)', 
-              maskImage: 'radial-gradient(circle at 80% 80%, black 50%, transparent 90%)' 
-            }}
-          />
         </div>
-        {/* Overlays: Solo oscurecemos la mitad izquierda donde va el texto, dejamos la derecha intacta */}
-        <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#020510] via-[#020510]/90 to-transparent w-[75%] md:w-[60%]"></div>
+        {/* Overlays: Solo oscurecemos la mitad izquierda donde va el texto en desktop */}
+        <div className="hidden md:block absolute inset-y-0 left-0 bg-gradient-to-r from-[#020510] via-[#020510]/90 to-transparent w-[60%]"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col md:block">
@@ -157,9 +146,28 @@ export default function About3D() {
             </div>
           </div>
 
+          </div>
+
+          {/* ── VIDEO MOBILE APILADO (Flujo Normal) ── */}
+          <div className="block md:hidden w-full h-[380px] relative mt-8 mb-6 float-animation">
+            <video 
+              ref={mobileVideoRef}
+              src="/img/avatar-mobile.mp4" 
+              autoPlay loop muted playsInline
+              className="w-full h-full object-contain object-center opacity-100 drop-shadow-2xl"
+              style={{ 
+                WebkitMaskImage: 'radial-gradient(circle at center, black 65%, transparent 100%)', 
+                maskImage: 'radial-gradient(circle at center, black 65%, transparent 100%)' 
+              }}
+            />
+          </div>
+
           {/* ── TEXTO DE DESCRIPCIÓN ALINEADO A LA IZQUIERDA Y CONTROLADO ── */}
-          <div className="flex justify-start w-full mt-6 md:mt-4">
-            <div className="w-[50%] md:w-[85%] pr-0">
+          <div className="flex justify-start w-full mt-6 md:mt-4 px-6 md:px-0">
+            <div className="w-full md:w-[85%] pr-0 relative">
+              {/* Fondo sutil en mobile para mejor lectura */}
+              <div className="absolute inset-0 bg-[#020510]/40 blur-xl md:hidden -z-10 rounded-full scale-110"></div>
+              
               <div className="rv-wrap overflow-hidden mb-2 pt-2 pb-1">
                 <p className="rv text-lg md:text-2xl font-black uppercase translate-y-full will-change-transform text-left">
                   Uso mi pasión y habilidades
@@ -185,8 +193,6 @@ export default function About3D() {
 
             </div>
           </div>
-
-        </div>
 
       </div>
     </section>
