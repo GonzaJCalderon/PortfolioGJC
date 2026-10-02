@@ -79,19 +79,20 @@ export default function About3D() {
             autoPlay loop muted playsInline
             className="hidden md:block w-full h-full object-cover object-right opacity-100"
           />
-          {/* VIDEO MOBILE (Vertical) */}
+          {/* VIDEO MOBILE (Vertical) achicado y pegado a la derecha/abajo */}
           <video 
             ref={mobileVideoRef}
             src="/img/avatar-mobile.mp4" 
             autoPlay loop muted playsInline
-            className="block md:hidden w-full h-full object-cover object-right opacity-100 translate-x-[20%]"
-            style={{ WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 30%)', maskImage: 'linear-gradient(to right, transparent 0%, black 30%)' }}
+            className="block md:hidden absolute right-[-5%] bottom-0 w-full h-full object-cover object-bottom opacity-100 scale-[0.75] origin-bottom-right"
+            style={{ 
+              WebkitMaskImage: 'radial-gradient(circle at 80% 80%, black 50%, transparent 90%)', 
+              maskImage: 'radial-gradient(circle at 80% 80%, black 50%, transparent 90%)' 
+            }}
           />
         </div>
-        {/* Overlays para oscurecer el fondo y asegurar legibilidad del texto sin líneas cortadas */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#020510] via-[#020510]/80 to-transparent w-full md:w-[60%]"></div>
-        <div className="absolute top-0 inset-x-0 h-[30%] bg-gradient-to-b from-[#020510] to-transparent md:hidden"></div>
-        <div className="absolute bottom-0 inset-x-0 h-[30%] bg-gradient-to-t from-[#020510] to-transparent md:hidden"></div>
+        {/* Overlays: Solo oscurecemos la mitad izquierda donde va el texto, dejamos la derecha intacta */}
+        <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#020510] via-[#020510]/90 to-transparent w-[75%] md:w-[60%]"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col md:block">
@@ -134,7 +135,7 @@ export default function About3D() {
 
           {/* ── TEXTO DE DESCRIPCIÓN ALINEADO A LA IZQUIERDA Y CONTROLADO ── */}
           <div className="flex justify-start w-full mt-6 md:mt-4">
-            <div className="w-full md:w-[85%] pr-[15%] md:pr-0">
+            <div className="w-[85%] md:w-[85%] pr-[5%] md:pr-0">
               <div className="rv-wrap overflow-hidden mb-2 pt-2 pb-1">
                 <p className="rv text-lg md:text-2xl font-black uppercase translate-y-full will-change-transform text-left">
                   Uso mi pasión y habilidades
