@@ -97,7 +97,7 @@ export default function SelectedCases() {
           {projects.map((p, idx) => (
             <div
               key={p.id}
-              className={`project-row opacity-0 will-change-opacity grid grid-cols-12 gap-x-6 gap-y-12 items-center mb-24 md:mb-36`}
+              className={`project-row opacity-0 will-change-opacity grid grid-cols-12 gap-x-6 gap-y-12 items-center mb-[15vh] md:mb-[30vh] last:mb-0`}
             >
               {/* Texto — alterna lado */}
               <div className={`col-span-12 md:col-span-4 flex flex-col gap-4 ${idx % 2 !== 0 ? 'md:col-start-9 md:order-last' : ''}`}>
@@ -133,11 +133,7 @@ export default function SelectedCases() {
                   loading="lazy"
                 />
                 {/* Overlay de hover */}
-                <div className="absolute inset-0 bg-bgDark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end p-8">
-                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
-                    <p className="text-[11px] font-black uppercase tracking-widest text-brand mb-1">{p.role}</p>
-                    <p className="text-sm font-medium uppercase text-textMuted">{p.desc}</p>
-                  </div>
+                <div className="absolute inset-0 bg-bgDark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
                 </div>
                 {/* Número grande decorativo */}
                 <div className="absolute top-2 right-4 text-[120px] md:text-[180px] font-black text-white/4 leading-none select-none pointer-events-none">

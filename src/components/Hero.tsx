@@ -43,7 +43,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative h-screen w-full flex flex-col overflow-hidden bg-bgDark">
+    <section ref={heroRef} className="relative min-h-[100svh] w-full flex flex-col overflow-hidden bg-bgDark">
 
       {/* ── FONDO BARROCO CON PARALLAX ── */}
       <div className="hero-bg-img absolute inset-0 z-0 scale-110 will-change-transform">
@@ -86,7 +86,7 @@ export default function Hero() {
       </div>
 
       {/* ── CONTENIDO PRINCIPAL ── */}
-      <div className="relative z-10 flex flex-col justify-end flex-1 px-8 md:px-14 pb-20 md:pb-28">
+      <div className="relative z-10 flex flex-col justify-end flex-1 px-8 md:px-14 pb-56 md:pb-64">
 
         {/* Badge "creativo" */}
         <div className="mb-5">
@@ -95,14 +95,14 @@ export default function Hero() {
 
         {/* Título hero — Línea 1 */}
         <div className="overflow-hidden">
-          <div ref={titleLine1} className="font-black uppercase leading-[0.86] tracking-tighter text-[clamp(2.8rem,14vw,13rem)] translate-y-full will-change-transform">
+          <div ref={titleLine1} className="font-black uppercase leading-[0.95] tracking-tighter text-[clamp(2.8rem,14vw,13rem)] translate-y-full will-change-transform">
             GONZALO
           </div>
         </div>
 
         {/* Título hero — Línea 2 */}
-        <div className="overflow-hidden mb-8">
-          <div ref={titleLine2} className="font-black uppercase leading-[0.86] tracking-tighter text-[clamp(2.8rem,14vw,13rem)] text-brand translate-y-full will-change-transform">
+        <div className="overflow-hidden mb-12 md:mb-16">
+          <div ref={titleLine2} className="font-black uppercase leading-[0.95] tracking-tighter text-[clamp(2.8rem,14vw,13rem)] text-brand translate-y-full will-change-transform">
             CALDERÓN
           </div>
         </div>

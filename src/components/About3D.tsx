@@ -9,8 +9,26 @@ const skills = ['React', 'Next.js', 'TypeScript', 'Node.js', 'NestJS', 'PostgreS
 
 export default function About3D() {
   const secRef = useRef<HTMLElement>(null);
+  const floatRef = useRef<HTMLDivElement>(null);
+  const avatarVideoRef = useRef<HTMLVideoElement>(null);
 
-    const floatRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const vid = avatarVideoRef.current;
+    if (!vid) return;
+
+    // Reproducir más lento
+    vid.playbackRate = 0.5;
+
+    // Para evitar el salto brusco al final, reiniciamos el video un poco antes de que termine
+    const handleTimeUpdate = () => {
+      if (vid.duration > 0 && vid.currentTime >= vid.duration - 0.2) {
+        vid.currentTime = 0.1; // Reiniciamos al principio antes del último frame
+      }
+    };
+
+    vid.addEventListener('timeupdate', handleTimeUpdate);
+    return () => vid.removeEventListener('timeupdate', handleTimeUpdate);
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -45,15 +63,16 @@ export default function About3D() {
   return (
     <section id="intro" ref={secRef} className="relative w-full overflow-hidden pt-32 pb-8 md:py-32 px-8 md:px-14 min-h-screen flex items-center bg-black">
       
-      {/* ── FONDO DE LA SECCIÓN: AMBIENTE ESPACIAL (VIDEO 1) ── */}
+      {/* ── FONDO DE LA SECCIÓN: VIDEO PRE-COMPUESTO (AVATAR + ESPACIO) ── */}
       <div className="absolute inset-0 z-0 bg-[#020510] overflow-hidden">
         <video 
-          src="/img/space-bg.mp4" 
+          ref={avatarVideoRef}
+          src="/img/avatar.mp4" 
           autoPlay 
           loop 
           muted 
           playsInline
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover object-[90%_center] md:object-right opacity-100"
         />
         {/* Overlays para oscurecer el fondo y asegurar legibilidad del texto */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
@@ -63,46 +82,60 @@ export default function About3D() {
       <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col md:block">
         
         {/* ── CONTENEDOR IZQUIERDO ESTILO PATRICK DAVID ── */}
-        <div className="flex flex-col w-full md:w-[65%] relative z-10 pt-16 md:pt-0">
+        <div className="flex flex-col w-[60%] md:w-[65%] relative z-10 pt-16 md:pt-0">
 
           {/* TÍTULO EN FUENTE CONDENSADA TIPO "ANTON" */}
-          <div className="mb-12 flex flex-col items-start">
+          <div className="mb-4 md:mb-12 flex flex-col items-start w-max">
             <div className="rv-wrap overflow-hidden relative pt-4 pb-4">
-              <h2 className="rv font-anton uppercase text-[5rem] md:text-[8rem] lg:text-[10rem] leading-[0.9] tracking-normal text-textMain translate-y-full will-change-transform transform scale-y-[1.1] origin-bottom">
+              <h2 className="rv font-anton uppercase text-[2.7rem] sm:text-[3.5rem] md:text-[6rem] lg:text-[7rem] leading-[0.9] tracking-normal text-textMain translate-y-full will-change-transform transform scale-y-[1.1] origin-bottom">
                 FRONTEND
               </h2>
             </div>
             <div className="rv-wrap overflow-hidden relative pb-4 -mt-4 md:-mt-6">
-              <h2 className="rv font-anton uppercase text-[5rem] md:text-[8rem] lg:text-[10rem] leading-[0.9] tracking-normal text-textMain translate-y-full will-change-transform transform scale-y-[1.1] origin-bottom">
+              <h2 className="rv font-anton uppercase text-[2.7rem] sm:text-[3.5rem] md:text-[6rem] lg:text-[7rem] leading-[0.9] tracking-normal text-textMain translate-y-full will-change-transform transform scale-y-[1.1] origin-bottom">
                 DEVELOPER
               </h2>
             </div>
-            <div className="text-left md:text-right w-full md:pr-12 mt-4 md:mt-2">
-              <span className="text-brand text-xs md:text-sm font-bold tracking-widest uppercase">
+            <div className="text-right w-full pr-8 md:pr-20 mt-2 relative">
+              <span className="text-brand text-xs md:text-sm font-bold tracking-widest uppercase relative inline-block">
                 Gonzalo Calderón
+                
+                {/* FLECHA DELICADA TIPO "PATRICK DAVID" */}
+                <div className="absolute left-[60%] md:left-[90%] top-[80%] md:top-[10%] w-[60px] md:w-[70px] h-[50px] pointer-events-none">
+                  <svg viewBox="0 0 70 50" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-white/50 overflow-visible">
+                    {/* Trazo ultra sutil y corto */}
+                    <path d="M 0,25 Q 30,40 65,10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeDasharray="2 3" />
+                    {/* Punta de la flecha */}
+                    <path d="M 52,12 L 67,8 L 60,22" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+                    {/* Texto escrito a mano minúsculo */}
+                    <text x="10" y="45" fill="currentColor" fontSize="8" fontFamily="cursive" transform="rotate(-5 10 45)">
+                      ¡sí, ese soy yo!
+                    </text>
+                  </svg>
+                </div>
               </span>
             </div>
           </div>
 
-          {/* ── TEXTO DE DESCRIPCIÓN ALINEADO A LA DERECHA (COMO EN LA REFERENCIA) ── */}
-          <div className="flex justify-end w-full">
-            <div className="w-full md:w-[85%]">
+          {/* ── TEXTO DE DESCRIPCIÓN ALINEADO A LA IZQUIERDA Y CONTROLADO ── */}
+          <div className="flex justify-start w-full mt-8 md:mt-4">
+            <div className="w-full md:w-[85%] pr-[20%] md:pr-0">
               <div className="rv-wrap overflow-hidden mb-2 pt-2 pb-1">
-                <p className="rv text-lg md:text-2xl font-black uppercase translate-y-full will-change-transform text-right md:text-left">
+                <p className="rv text-lg md:text-2xl font-black uppercase translate-y-full will-change-transform text-left">
                   Uso mi pasión y habilidades
                 </p>
               </div>
 
-              <p className="fade-up text-sm font-medium uppercase leading-[1.6] text-textMuted mb-12 opacity-0 will-change-opacity text-right md:text-left">
+              <p className="fade-up text-sm font-medium uppercase leading-[1.6] text-white/95 drop-shadow-md mb-12 opacity-0 will-change-opacity text-left">
                 para crear productos digitales de alto impacto. Me dedico principalmente al desarrollo web como Fullstack developer especializado en Frontend. Soy versátil, perfeccionista y en busca de la excelencia. Trabajo con clientes nacionales e internacionales.
               </p>
 
               {/* Skills */}
               <div className="fade-up opacity-0 will-change-opacity border-t border-white/10 pt-8">
-                <p className="text-brand text-[10px] font-black uppercase tracking-[0.4em] mb-5 text-right md:text-left">Tecnologías</p>
+                <p className="text-brand text-[10px] font-black uppercase tracking-[0.4em] mb-5 text-left">Tecnologías</p>
                 <div className="grid grid-cols-2 gap-y-3">
                   {skills.map((s) => (
-                    <div key={s} className="flex items-center gap-2.5 group justify-end md:justify-start">
+                    <div key={s} className="flex items-center gap-2.5 group justify-start">
                       <div className="w-1.5 h-1.5 rounded-full bg-brand group-hover:scale-150 transition-transform shrink-0" />
                       <span className="text-[11px] font-black uppercase tracking-widest hover:text-brand transition-colors">{s}</span>
                     </div>
@@ -113,18 +146,6 @@ export default function About3D() {
             </div>
           </div>
 
-        </div>
-
-        {/* ── VIDEO PRINCIPAL DEL MUÑECO (A LA DERECHA) ── */}
-        <div className="relative md:absolute md:right-[2%] md:top-1/2 md:transform md:-translate-y-1/2 w-full md:w-[50%] h-auto md:h-[80vh] flex items-center justify-center pointer-events-none z-0 mt-4 md:mt-0">
-          <video 
-            src="/img/avatar.mp4" 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            className="w-full max-w-[350px] md:max-w-[600px] aspect-square object-cover opacity-100 md-avatar-mask"
-          />
         </div>
 
       </div>

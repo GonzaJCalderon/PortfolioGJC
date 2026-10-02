@@ -104,15 +104,13 @@ body {
 
 /* ─── Máscara del avatar ──────────── */
 .md-avatar-mask {
-  /* En móviles: usamos closest-side para garantizar que el difuminado termine exactamente antes de tocar el borde recto del contenedor */
-  mask-image: radial-gradient(circle closest-side, black 50%, transparent 95%);
-  -webkit-mask-image: radial-gradient(circle closest-side, black 50%, transparent 95%);
+  mask-image: radial-gradient(circle closest-side, black 75%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle closest-side, black 75%, transparent 100%);
 }
 
 @media (min-width: 768px) {
   .md-avatar-mask {
-    /* En desktop: el globo original más cerrado */
-    mask-image: radial-gradient(circle at center, black 45%, transparent 75%);
-    -webkit-mask-image: radial-gradient(circle at center, black 45%, transparent 75%);
+    mask-image: radial-gradient(circle closest-side, black 75%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle closest-side, black 75%, transparent 100%);
   }
 }
