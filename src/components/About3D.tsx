@@ -85,6 +85,7 @@ export default function About3D() {
             src="/img/avatar-mobile.mp4" 
             autoPlay loop muted playsInline
             className="block md:hidden w-full h-full object-cover object-right opacity-100 scale-[0.80] origin-right translate-x-[5%]"
+            style={{ WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 25%)', maskImage: 'linear-gradient(to right, transparent 0%, black 25%)' }}
           />
         </div>
         {/* Overlays para oscurecer el fondo y asegurar legibilidad del texto */}
@@ -132,7 +133,7 @@ export default function About3D() {
 
           {/* ── TEXTO DE DESCRIPCIÓN ALINEADO A LA IZQUIERDA Y CONTROLADO ── */}
           <div className="flex justify-start w-full mt-8 md:mt-4">
-            <div className="w-full md:w-[85%] pr-[20%] md:pr-0">
+            <div className="w-full md:w-[85%] pr-[35%] md:pr-0">
               <div className="rv-wrap overflow-hidden mb-2 pt-2 pb-1">
                 <p className="rv text-lg md:text-2xl font-black uppercase translate-y-full will-change-transform text-left">
                   Uso mi pasión y habilidades
