@@ -1,5 +1,6 @@
 'use client';
 import React, { useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -148,25 +149,31 @@ export default function About3D() {
 
           </div>
 
-          {/* ── VIDEO MOBILE APILADO (Flujo Normal) ── */}
-          <div className="block md:hidden w-full h-[380px] relative mt-8 mb-6 float-animation">
+          {/* ── VIDEO MOBILE APILADO (Ancho Completo w-screen) ── */}
+          <div className="block md:hidden w-[100vw] h-[450px] relative mt-12 mb-8 float-animation left-1/2 -translate-x-1/2">
             <video 
               ref={mobileVideoRef}
               src="/img/avatar-mobile.mp4" 
               autoPlay loop muted playsInline
-              className="w-full h-full object-contain object-center opacity-100 drop-shadow-2xl"
+              className="w-full h-full object-cover object-center opacity-100 drop-shadow-2xl"
               style={{ 
-                WebkitMaskImage: 'radial-gradient(circle at center, black 65%, transparent 100%)', 
-                maskImage: 'radial-gradient(circle at center, black 65%, transparent 100%)' 
+                WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)', 
+                maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)' 
               }}
             />
           </div>
 
-          {/* ── TEXTO DE DESCRIPCIÓN ALINEADO A LA IZQUIERDA Y CONTROLADO ── */}
-          <div className="flex justify-start w-full mt-6 md:mt-4 px-6 md:px-0">
+          {/* ── TEXTO DE DESCRIPCIÓN ALINEADO A LA IZQUIERDA CON ANIMACIÓN (Framer Motion) ── */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex justify-start w-full mt-12 pt-4 px-6 md:px-0 md:mt-4"
+          >
             <div className="w-full md:w-[85%] pr-0 relative">
               {/* Fondo sutil en mobile para mejor lectura */}
-              <div className="absolute inset-0 bg-[#020510]/40 blur-xl md:hidden -z-10 rounded-full scale-110"></div>
+              <div className="absolute inset-0 bg-[#020510]/50 blur-xl md:hidden -z-10 rounded-full scale-110"></div>
               
               <div className="rv-wrap overflow-hidden mb-2 pt-2 pb-1">
                 <p className="rv text-lg md:text-2xl font-black uppercase translate-y-full will-change-transform text-left">
@@ -192,7 +199,7 @@ export default function About3D() {
               </div>
 
             </div>
-          </div>
+          </motion.div>
 
       </div>
     </section>
