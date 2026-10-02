@@ -111,16 +111,29 @@ export default function About3D() {
             <div className="text-right w-full pr-4 md:pr-20 mt-1 md:mt-2 relative">
               <span className="text-brand text-xs md:text-sm font-bold tracking-widest uppercase relative inline-block">
                 Gonzalo Calderón
-                
-                {/* FLECHA DELICADA TIPO "PATRICK DAVID" */}
-                <div className="absolute left-[70%] md:left-[90%] top-[90%] md:top-[10%] w-[50px] md:w-[70px] h-[40px] md:h-[50px] pointer-events-none">
+                {/* FLECHA DELICADA TIPO "PATRICK DAVID" - DESKTOP */}
+                <div className="hidden md:block absolute left-[90%] top-[10%] w-[70px] h-[50px] pointer-events-none">
                   <svg viewBox="0 0 70 50" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-white/50 overflow-visible">
-                    {/* Trazo ultra sutil y corto */}
+                    {/* Trazo ultra sutil y corto hacia arriba-derecha */}
                     <path d="M 0,25 Q 30,40 65,10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeDasharray="2 3" />
                     {/* Punta de la flecha */}
                     <path d="M 52,12 L 67,8 L 60,22" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
                     {/* Texto escrito a mano minúsculo */}
-                    <text x="5" y="45" fill="currentColor" fontSize="8" fontFamily="cursive" transform="rotate(-5 5 45)">
+                    <text x="10" y="45" fill="currentColor" fontSize="8" fontFamily="cursive" transform="rotate(-5 10 45)">
+                      ¡sí, ese soy yo!
+                    </text>
+                  </svg>
+                </div>
+
+                {/* FLECHA DELICADA TIPO "PATRICK DAVID" - MOBILE */}
+                <div className="md:hidden absolute left-[65%] top-full mt-2 w-[60px] h-[60px] pointer-events-none">
+                  <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-white/50 overflow-visible">
+                    {/* Trazo sutil que cae hacia abajo-derecha apuntando al muñeco */}
+                    <path d="M 0,0 Q 20,40 55,55" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeDasharray="2 3" />
+                    {/* Punta de la flecha */}
+                    <path d="M 40,50 L 55,55 L 50,40" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+                    {/* Texto escrito a mano minúsculo */}
+                    <text x="0" y="25" fill="currentColor" fontSize="8" fontFamily="cursive" transform="rotate(-15 0 25)">
                       ¡sí, ese soy yo!
                     </text>
                   </svg>
@@ -131,7 +144,7 @@ export default function About3D() {
 
           {/* ── TEXTO DE DESCRIPCIÓN ALINEADO A LA IZQUIERDA Y CONTROLADO ── */}
           <div className="flex justify-start w-full mt-6 md:mt-4">
-            <div className="w-[85%] md:w-[85%] pr-[5%] md:pr-0">
+            <div className="w-[60%] md:w-[85%] pr-0">
               <div className="rv-wrap overflow-hidden mb-2 pt-2 pb-1">
                 <p className="rv text-lg md:text-2xl font-black uppercase translate-y-full will-change-transform text-left">
                   Uso mi pasión y habilidades
