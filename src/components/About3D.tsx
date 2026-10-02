@@ -84,45 +84,46 @@ export default function About3D() {
             ref={mobileVideoRef}
             src="/img/avatar-mobile.mp4" 
             autoPlay loop muted playsInline
-            className="block md:hidden w-full h-full object-cover object-right opacity-100 scale-[0.80] origin-right translate-x-[5%]"
-            style={{ WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 25%)', maskImage: 'linear-gradient(to right, transparent 0%, black 25%)' }}
+            className="block md:hidden w-full h-full object-cover object-right opacity-100 translate-x-[20%]"
+            style={{ WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 30%)', maskImage: 'linear-gradient(to right, transparent 0%, black 30%)' }}
           />
         </div>
-        {/* Overlays para oscurecer el fondo y asegurar legibilidad del texto */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-transparent to-black/90 md:hidden"></div>
+        {/* Overlays para oscurecer el fondo y asegurar legibilidad del texto sin líneas cortadas */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#020510] via-[#020510]/80 to-transparent w-full md:w-[60%]"></div>
+        <div className="absolute top-0 inset-x-0 h-[30%] bg-gradient-to-b from-[#020510] to-transparent md:hidden"></div>
+        <div className="absolute bottom-0 inset-x-0 h-[30%] bg-gradient-to-t from-[#020510] to-transparent md:hidden"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col md:block">
         
         {/* ── CONTENEDOR IZQUIERDO ESTILO PATRICK DAVID ── */}
-        <div className="flex flex-col w-[60%] md:w-[65%] relative z-10 pt-16 md:pt-0">
+        <div className="flex flex-col w-full md:w-[65%] relative z-10 pt-12 md:pt-0">
 
           {/* TÍTULO EN FUENTE CONDENSADA TIPO "ANTON" */}
           <div className="mb-4 md:mb-12 flex flex-col items-start w-max">
             <div className="rv-wrap overflow-hidden relative pt-4 pb-4">
-              <h2 className="rv font-anton uppercase text-[2.7rem] sm:text-[3.5rem] md:text-[6rem] lg:text-[7rem] leading-[0.9] tracking-normal text-textMain translate-y-full will-change-transform transform scale-y-[1.1] origin-bottom">
+              <h2 className="rv font-anton uppercase text-[3rem] sm:text-[4rem] md:text-[6rem] lg:text-[7rem] leading-[0.9] tracking-normal text-textMain translate-y-full will-change-transform transform scale-y-[1.1] origin-bottom">
                 FRONTEND
               </h2>
             </div>
             <div className="rv-wrap overflow-hidden relative pb-4 -mt-4 md:-mt-6">
-              <h2 className="rv font-anton uppercase text-[2.7rem] sm:text-[3.5rem] md:text-[6rem] lg:text-[7rem] leading-[0.9] tracking-normal text-textMain translate-y-full will-change-transform transform scale-y-[1.1] origin-bottom">
+              <h2 className="rv font-anton uppercase text-[3rem] sm:text-[4rem] md:text-[6rem] lg:text-[7rem] leading-[0.9] tracking-normal text-textMain translate-y-full will-change-transform transform scale-y-[1.1] origin-bottom">
                 DEVELOPER
               </h2>
             </div>
-            <div className="text-right w-full pr-8 md:pr-20 mt-2 relative">
+            <div className="text-right w-full pr-4 md:pr-20 mt-1 md:mt-2 relative">
               <span className="text-brand text-xs md:text-sm font-bold tracking-widest uppercase relative inline-block">
                 Gonzalo Calderón
                 
                 {/* FLECHA DELICADA TIPO "PATRICK DAVID" */}
-                <div className="absolute left-[60%] md:left-[90%] top-[80%] md:top-[10%] w-[60px] md:w-[70px] h-[50px] pointer-events-none">
+                <div className="absolute left-[70%] md:left-[90%] top-[90%] md:top-[10%] w-[50px] md:w-[70px] h-[40px] md:h-[50px] pointer-events-none">
                   <svg viewBox="0 0 70 50" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-white/50 overflow-visible">
                     {/* Trazo ultra sutil y corto */}
                     <path d="M 0,25 Q 30,40 65,10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeDasharray="2 3" />
                     {/* Punta de la flecha */}
                     <path d="M 52,12 L 67,8 L 60,22" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
                     {/* Texto escrito a mano minúsculo */}
-                    <text x="10" y="45" fill="currentColor" fontSize="8" fontFamily="cursive" transform="rotate(-5 10 45)">
+                    <text x="5" y="45" fill="currentColor" fontSize="8" fontFamily="cursive" transform="rotate(-5 5 45)">
                       ¡sí, ese soy yo!
                     </text>
                   </svg>
@@ -132,8 +133,8 @@ export default function About3D() {
           </div>
 
           {/* ── TEXTO DE DESCRIPCIÓN ALINEADO A LA IZQUIERDA Y CONTROLADO ── */}
-          <div className="flex justify-start w-full mt-8 md:mt-4">
-            <div className="w-full md:w-[85%] pr-[35%] md:pr-0">
+          <div className="flex justify-start w-full mt-6 md:mt-4">
+            <div className="w-full md:w-[85%] pr-[15%] md:pr-0">
               <div className="rv-wrap overflow-hidden mb-2 pt-2 pb-1">
                 <p className="rv text-lg md:text-2xl font-black uppercase translate-y-full will-change-transform text-left">
                   Uso mi pasión y habilidades
